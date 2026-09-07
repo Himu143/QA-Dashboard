@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 import React, { useState } from 'react';
 import { 
   BarChart3, 
@@ -17,6 +18,14 @@ import {
 } from 'lucide-react';
 import { ViewTab, TeamMember, Project } from '../types';
 import { INITIAL_TEAM_MEMBERS } from '../data/seedData';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elementName: string]: any;
+    }
+  }
+}
 
 interface SidebarProps {
   currentTab: ViewTab;
@@ -50,7 +59,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onDeleteProject,
   isMobileOpen = false,
   onCloseMobile,
-}) => {
+}: SidebarProps) => {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [confirmDeleteProjId, setConfirmDeleteProjId] = useState<string | null>(null);
 
@@ -94,7 +103,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
             <div>
               <span className="text-white font-semibold text-lg tracking-tight flex items-center gap-1.5">
-                QA Flow
+                QA Dashboard
                 <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
                   Sleek
                 </span>

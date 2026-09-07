@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
       case 'activity':
         return 'Team Testing Audit Log';
       default:
-        return 'QA Flow Central';
+        return 'QA Dashboard Central';
     }
   };
 
