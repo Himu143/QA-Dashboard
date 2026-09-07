@@ -1,0 +1,6 @@
+{
+  "name": "QA Dashboard",
+  "description": "Comprehensive QA management dashboard for tracking bugs, issues, test plans, test cases, and test reports project-wise with real-time team collaboration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

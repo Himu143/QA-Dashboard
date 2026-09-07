@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QA Dashboard</title>
+    <meta name="description" content="Comprehensive QA management dashboard for tracking bugs, issues, test plans, test cases, and test reports project-wise with real-time team collaboration." />
+    <meta property="og:title" content="QA Dashboard" />
+    <meta property="og:description" content="Comprehensive QA management dashboard for tracking bugs, issues, test plans, test cases, and test reports project-wise with real-time team collaboration." />
+    <script>
+      (function() {
+        try {
+          var origFetch = window.fetch;
+          var customFetch = origFetch;
+          try {
+            Object.defineProperty(window, 'fetch', {
+              get: function() {
+                return customFetch || origFetch;
+              },
+              set: function(val) {
+                customFetch = val;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          } catch(e) {
+            // ignore if not reconfigurable
+          }
+        } catch(err) {
+          // ignore
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
