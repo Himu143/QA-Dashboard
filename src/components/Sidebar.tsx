@@ -104,9 +104,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <div>
               <span className="text-white font-semibold text-lg tracking-tight flex items-center gap-1.5">
                 QA Dashboard
-                <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                {/* <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
                   Sleek
-                </span>
+                </span> */}
               </span>
             </div>
           </div>

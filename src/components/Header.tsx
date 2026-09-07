@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 import React from 'react';
 import { 
   Search, 
@@ -9,7 +10,6 @@ import {
   Sparkles,
   ChevronDown,
   Edit3,
-  Trash2
 } from 'lucide-react';
 import { Project, ViewTab } from '../types';
 
@@ -19,27 +19,23 @@ interface HeaderProps {
   selectedProjectId: string;
   onSelectProject: (id: string) => void;
   onOpenNewBug: () => void;
-  onOpenNewProject: () => void;
   onEditProject?: (project: Project) => void;
-  onDeleteProject?: (projectId: string) => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onToggleMobileMenu: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header = ({
   currentTab,
   projects,
   selectedProjectId,
   onSelectProject,
   onOpenNewBug,
-  onOpenNewProject,
   onEditProject,
-  onDeleteProject,
   searchQuery,
   onSearchChange,
   onToggleMobileMenu,
-}) => {
+}: HeaderProps) => {
   const getTabTitle = (tab: ViewTab) => {
     switch (tab) {
       case 'dashboard':
@@ -85,11 +81,11 @@ export const Header: React.FC<HeaderProps> = ({
           <select
             id="header-project-select"
             value={selectedProjectId}
-            onChange={(e) => onSelectProject(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onSelectProject(e.target.value)}
             className="bg-slate-100 border border-slate-200/80 rounded-lg px-3 py-1.5 text-xs sm:text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer"
           >
             <option value="all">All Projects</option>
-            {projects.map(proj => (
+            {projects.map((proj: Project) => (
               <option key={proj.id} value={proj.id}>
                 {proj.name} ({proj.key})
               </option>
@@ -118,7 +114,7 @@ export const Header: React.FC<HeaderProps> = ({
           <input
             type="text"
             value={searchQuery}
-            onChange={(e) => onSearchChange(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onSearchChange(e.target.value)}
             placeholder="Search defects, tags..."
             className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-9 pr-3 py-1.5 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
           />
